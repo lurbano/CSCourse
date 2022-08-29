@@ -1,3 +1,4 @@
+
 import numpy as np
 import matplotlib.pyplot as plt
 import time
@@ -17,11 +18,16 @@ diff = abs(test-target) # the difference between the target and the test
 i = 0           # itteraton 
 
 # SET UP FOR OUTPUT FOR EACH ITERATION
-x = []          # make array for iteration number
+x = []
 y = []
-x.append(i)     # add initial values to data array for graphing
+x.append(i)
 y.append(g)
-print (i, ":", g, test, diff)   # print output to screen
+print (i, ":", g, test, diff)
+
+fig, ax = plt.subplots()
+plt.ion()
+plot1, = ax.plot(x, y)
+plt.show()
 
 while (diff > conv):    # run while the difference is greater than our convergence criteria 
     i += 1
@@ -29,13 +35,19 @@ while (diff > conv):    # run while the difference is greater than our convergen
     test = g * g
     diff = abs(test-target) # check how close to the target we are
 
-    # gather output data for this iteration
+    # output for this iteration
     x.append(i)
     y.append(g)
     print (i, ":", g, test, diff)
 
+    plot1.set_xdata(x)
+    plot1.set_ydata(y)
+    
+    fig.canvas.draw()
+    fig.canvas.flush_events()
+    time.sleep(0.1)
+    
 # DRAW GRAPH
-fig, ax = plt.subplots()    # initialize matplotlib plot
-ax.plot(x, y)               # put data into plot
-plt.show()                  # show the plot
+#ax.plot(x, y)
+
 
