@@ -1,9 +1,18 @@
 
+def lineCount(filename):
+    '''Counts the number of lines in a file'''
+    with open(filename) as f:
+        lines = f.readlines()
+    return len(lines)
+
+
 with open('terence.txt') as f:
     lines = f.readlines()
 
-print(lines)
-print("Length: ", len(lines))
+    
+# print(lines)
+print("Length: ", lineCount('terence.txt'))
+    
 print(lines[0])
 print(lines[0][0])
 print(lines[0][-2])
