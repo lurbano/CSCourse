@@ -8,5 +8,6 @@ class textInator:
 
     def fileLength(self):
         n = len(self.lines)
+        
         return(n)
 
