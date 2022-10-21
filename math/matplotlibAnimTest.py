@@ -1,4 +1,3 @@
-
 import numpy as np
 import matplotlib.pyplot as plt
 import time
@@ -18,16 +17,18 @@ diff = abs(test-target) # the difference between the target and the test
 i = 0           # itteraton 
 
 # SET UP FOR OUTPUT FOR EACH ITERATION
-x = []
+x = []          # make array for iteration number
 y = []
-x.append(i)
+x.append(i)     # add initial values to data array for graphing
 y.append(g)
-print (i, ":", g, test, diff)
-
-fig, ax = plt.subplots()
-plt.ion()
-plot1, = ax.plot(x, y)
-plt.show()
+print (i, ":", g, test, diff)   # print output to screen
+fig, ax = plt.subplots()    # initialize matplotlib plot
+plt.xlim([0, 5])
+ax.set_xlabel('Iteration')  # label axes
+ax.set_ylabel('Guess (g)')  # label axes
+ax.plot(x, y)               # put data into plot (line)
+ax.scatter(x, y)            # put data into plot (scatter (dots))
+plt.pause(2)                # pause for 2 seconds
 
 while (diff > conv):    # run while the difference is greater than our convergence criteria 
     i += 1
@@ -35,19 +36,14 @@ while (diff > conv):    # run while the difference is greater than our convergen
     test = g * g
     diff = abs(test-target) # check how close to the target we are
 
-    # output for this iteration
+    # gather output data for this iteration
     x.append(i)
     y.append(g)
     print (i, ":", g, test, diff)
+    ax.plot(x, y)               # put data into plot
+    ax.scatter(x, y)
+    plt.pause(2)
 
-    plot1.set_xdata(x)
-    plot1.set_ydata(y)
-    
-    fig.canvas.draw()
-    fig.canvas.flush_events()
-    time.sleep(0.5)
-    
 # DRAW GRAPH
-#ax.plot(x, y)
-
+plt.show()                  # show the plot
 
