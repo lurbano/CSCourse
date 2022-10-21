@@ -34,4 +34,3 @@ while (diff > conv):    # run while the difference is greater than our convergen
 
 # DRAW GRAPH
 plt.show()                  # show the plot
-
