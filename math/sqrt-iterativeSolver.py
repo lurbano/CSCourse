@@ -1,6 +1,6 @@
 import numpy as np
 import time
-from uAGraph import *
+from ezGraph import *
 
 # INPUT
 target = 25     # value to find the square root of
@@ -17,7 +17,7 @@ diff = abs(test-target) # the difference between the target and the test
 i = 0           # itteraton 
 
 # SET UP FOR OUTPUT FOR EACH ITERATION
-graph = uAGraph()
+graph = ezGraph()
 graph.add(i, g)
 graph.wait(1)                # pause for 2 seconds
 
@@ -33,4 +33,4 @@ while (diff > conv):    # run while the difference is greater than our convergen
     
 
 # DRAW GRAPH
-plt.show()                  # show the plot
+graph.keepOpen()    # keep graph open
