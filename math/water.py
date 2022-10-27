@@ -14,7 +14,7 @@ m = 2
 b = -3.22
 
 # GRAPH
-graph = ezGraph(xmax=30, ymin=0, ymax=50, xLabel="Time (s)")
+graph = ezGraph(xmax=30, ymin=0, ymax=50, xLabel="Time (s)", yLabel="Height (cm)")
 
 
 # TIME LOOP
