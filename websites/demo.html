@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <input type="text" id='data' placeholder="enter here">
+    <input type="text" name="" id="nextOne">
+
+    <div id="output">hi</div>
+</body>
+
+
+<script>
+    a = "Coen";
+
+    inputDiv = document.getElementById("data");
+    inputDiv.addEventListener("change", function(){
+        v = this.value;
+        v2 = document.getElementById("nextOne").value;
+        document.getElementById("output").innerHTML = v + " " + v2;
+    })
+
+    inputDiv = document.getElementById("nextOne");
+    inputDiv.addEventListener("change", function(){
+        v = document.getElementById("data").value;
+        v2 = document.getElementById("nextOne").value;
+        document.getElementById("output").innerHTML = v + " " + v2 + a;
+    })
+
+</script>
+
+
+</html>

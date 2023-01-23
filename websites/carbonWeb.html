@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Carbon-14</title>
+
+    </head>
+
+    <body>
+        <h1>Life of Carbon-14</h1>
+        
+        <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+        
+
+
+            Carbon-14: 
+            <br><input
+                type ="text" id="start"
+                    placeholder="Start">
+                <!-- this is an input box-->
+
+                
+            
+            <br><input
+                type ="text" id="end"
+                    placeholder="End">
+                    <!-- this is an input box-->
+
+        <!--    <img src="soap.jpg" alt="" width="100" height="100">   
+        puting an image in-->
+<div id="output"></div>
+<button type="button" onclick="alert(T)">Answer!</button>
+
+
+    </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+<script>
+
+
+
+    inputDiv = document.getElementById("start");
+    inputDiv.addEventListener("change",function(){
+        s = this.value;
+
+    })
+
+
+
+    x = document.getElementById("end");
+    x.addEventListener("change",function(){
+        e = this.value;
+
+s = document.getElementById("start").value;
+        
+a = 0.6931471806/5730
+
+T = Math.log(e/s)/-(a)
+
+
+document.getElementById("output").innerHTML = T + " years";
+    })
+
+
+
+
+
+</script>
+
+<script>
+    var xValues = [];
+    var yValues = [];
+
+    a = 0.6931471806/5730;
+    s = 100;
+    for (i=0; i<8; i++){
+        t = i * 5730;
+        T = s/(2**i)
+        xValues.push(t);
+        yValues.push(T);
+
+    }
+    console.log(xValues, yValues)
+    
+    new Chart("myChart", {
+      type: "line",
+      data: {
+        labels: xValues,
+        datasets: [{
+          fill: false,
+          lineTension: 0,
+          backgroundColor: "rgba(0,0,255,1.0)",
+          borderColor: "rgba(0,0,255,0.1)",
+          data: yValues
+        }]
+      },
+      options: {
+        legend: {display: false},
+        scales: {
+          yAxes: [{ticks: {min: 0, max:100}}],
+        }
+      }
+    });
+    </script>
+
+</html>

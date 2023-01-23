@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Keychains Boom</title>
+        <style>
+            /* CSS: cascading style sheets */
+            p {
+                background-color: rgb(255,100,0);
+                color:aliceblue;
+            }
+            #thisFootnote {
+                color:blue;
+            }
+            #letter {
+                background-color: green;
+            }
+            .odds {
+                border: 1px solid red;
+            }
+            .evens {
+                border: 5px inset blue;
+                border-radius: 10px;
+                width: 50%;
+                padding: 10px;
+                margin: 20px;
+            }
+            .evens:hover {
+                border: 7px outset pink;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>KEYCHAIN</h1>
+        <h2>ORDER FORM</h2>
+
+        Name: 
+        <br>
+        <input type="text" id="customer" placeholder="John Doe">
+        <!-- this is an input box -->
+        <p>
+            Letter:
+            <select id="letter">
+                <option value="A">A</option>
+                <option value="B" selected>B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+            </select>
+            This is where you select the letter you want made by the middle schoolers.
+        </p>
+
+        <img src="soap.jpg" alt="" width="100" height="100">
+
+        <p>
+            This is the end of the page.
+        </p>
+
+        <div id="thisFootnote">
+            This is a footnote.
+        </div>
+
+        <div id="one" class="odds">
+            One
+        </div>
+        <div class="evens">
+            Two
+        </div>
+        <div class="odds">
+            Three
+        </div>
+        <div id='test' class = "evens">
+            Four
+        </div>
+
+    </body>
+
+    <script>
+        document.getElementById("test").addEventListener('click', function(){
+            alert('hi');
+        })
+
+        x = document.getElementById("one");
+        x.addEventListener('click', function(){
+            this.innerHTML = "1";
+        })
+
+        c = document.getElementById("customer");
+        c.addEventListener("change", function(){
+            txt = "Hi " + this.value;
+            alert(txt);
+        })
+
+        e = document.getElementsByClassName("evens");
+        e.addEventListener('click', function(){
+            alert("even")
+        })
+
+    </script>
+
+
+</html>
